@@ -4,7 +4,9 @@
     <header class="navbar">
         <div class="left-navbar">
             <div class="logo">
-                <img src="{{ asset('images/logo-thirds.png') }}" alt="logo">
+                <a href="{{ route('welcome') }}" class="home-link">
+                    <img src="{{ asset('images/logo-thirds.png') }}" alt="logo">
+                </a>
             </div>
 
             <ul>
@@ -12,21 +14,33 @@
                 <li><a href="#">faqs</a></li>
             </ul>
         </div>
-
         <div class="register-container">
-            @if (request()->routeIs('register-student') or request()->routeIs('login-admin') or request()->routeIs('register-admin') )
+            @if (request()->routeIs('register-student') or request()->routeIs('login-admin') or request()->routeIs('register-admin'))
                 <a class="register" href="{{ route('welcome') }}" id="return">
                     Return
                 </a>
             @else
-                <a class="register" href="{{ route('register-student') }}">
-                    Register
-                </a>
-                <a class="register icon-only" href="{{ route('login-admin') }}">
-                    <img src="{{ asset('images/admin-con.png') }}"
-                         alt="admin icon"
-                         class="admin-icon">
-                </a>
+                @guest
+                    <a class="register" href="{{ route('register-student') }}">
+                        Register
+                    </a>
+                    <a class="register icon-only" href="{{ route('login-admin') }}">
+                        <img src="{{ asset('images/admin-con.png') }}"
+                             alt="admin icon"
+                             class="admin-icon">
+                    </a>
+                @else
+                    <a class="register icon-only" href="{{ route('manage-logs') }}">
+                        <img src="{{ asset('images/admin-con.png') }}"
+                             alt="admin icon"
+                             class="admin-icon">
+                    </a>
+                    <a class="register icon-only" href="{{route('welcome')}}" wire:click.prevent="logout">
+                        <img src="{{ asset('images/logout.png') }}"
+                             alt="logout icon"
+                             class="admin-icon">
+                    </a>
+                @endguest
             @endif
         </div>
     </header>

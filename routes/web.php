@@ -3,7 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\StudentRegistration;
 
-Route::view('/', 'welcome')->name('welcome');
+Route::view('/', 'welcome');
+
+
+Route::get('/welcome', function(){
+    return view('welcome');
+    })->name('welcome');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
