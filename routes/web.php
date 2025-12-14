@@ -5,7 +5,6 @@ use App\Livewire\StudentRegistration;
 
 Route::view('/', 'welcome');
 
-
 Route::get('/welcome', function(){
     return view('welcome');
     })->name('welcome');

@@ -293,7 +293,8 @@ body {
 
 
 .right-main p {
-    color: var(--dark-gray)
+    color: var(--dark-gray);
+    margin-top: 0.7rem;
 }
 
 
@@ -387,9 +388,6 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-
-
-
 .card-seats p {
   margin: 0;
   font-size: 4rem;
@@ -397,16 +395,11 @@ body {
   gap: 0.6rem;
   align-items: baseline;
 }
-.card-seats p span:first-child {
-    font-size: 3.5rem;
-    line-height: 1;
-    color: var(--green);
-}
 
 
 .card-seats p span:last-child  {
     color: var(--green);
-    font-size: 3.5rem;
+    font-size: 4rem;
 }
 
 
@@ -484,7 +477,8 @@ body {
   cursor: pointer;
   height: auto;
   min-height: 230px;
- 
+
+
 
 
 }
@@ -683,6 +677,59 @@ body {
     width: 100%;
     height: 30px;
 }
+
+.alert {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1.2rem 1.6rem;
+    border-radius: 12px;
+    font-size: 1.6rem;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    max-width: 720px;
+    width: 100%;
+    animation: slideFadeIn 0.45s ease forwards;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.alert-error {
+    background-color: rgba(231, 76, 60, 0.12);
+    border: 2px solid rgba(231, 76, 60, 0.5);
+    color: #c0392b;
+}
+
+.alert-success {
+    background-color: rgba(157, 199, 93, 0.18);
+    border: 2px solid var(--green);
+    color: #4f6f1f;
+}
+
+.alert.fade-out {
+    animation: slideFadeOut 0.45s ease forwards;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
 
 
 @media (max-width: 1000px) {

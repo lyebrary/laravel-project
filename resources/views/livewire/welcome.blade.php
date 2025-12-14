@@ -6,22 +6,33 @@
     <div class="right-main">
         <img src="{{ URL::asset('/images/five-logo.png') }}">
         <h1>find your space in <br> the third space.</h1>
-        <form action="#">
+        <form wire:submit.prevent="login">
             <label>Student Number (20XXXXXXX)</label>
-            <input type="text" name="Input your student number">
+            <input type="text" wire:model="student_number" placeholder="Input your student number">
+            @error('student_number')
+                <div class="alert alert-error">{{ $message }}</div>
+            @enderror
         </form>
 
         <div class="user-auth">
-            <div class="login">Log in</div>
-            <div class="logout">Log out</div>
+            <div class="login" wire:click="login">Log in</div>
+            <div class="logout" wire:click="logout">Log out</div>
         </div>
         <p>Haven't registered? <span><a href="{{ route('register-student') }}">Register here.</a></span></p>
+        @error('general')
+            <div class="alert alert-error">{{ $message }}</div>
+        @enderror
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
     </div>
 
     <div class="bottom-main">
         <div class="card card-seats">
             <img src="{{ URL::asset('/images/chair-icon.png') }}" alt="chair-icon" id="chair-icon">
-            <p><span class="seat">87</span> / <span class="seat">250</span></p>
+            <p><span class="seat">{{ $current_logged_in_count }}</span> / 250</p>
         </div>
 
         <div class="card card-time">
@@ -33,11 +44,6 @@
             <p>ORANGE ZONE</p>
             <p><span class="time-sched">8:00AM-10:00AM</span> UP FLIPP</p>
             <p><span class="time-sched">3:00PM-6:00PM</span> UP Kalilayan</p>
-            <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
-            <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
-            <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
-            <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
-            <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
             <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
         </div>
     </div>

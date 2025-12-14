@@ -10,8 +10,9 @@
             </div>
 
             <ul>
-                <li><a href="#">about</a></li>
-                <li><a href="#">faqs</a></li>
+                <li><a href="#">users</a></li>
+                <li><a href="{{route('manage-logs')}}">logs</a></li>
+                <li><a href="#">venue</a></li>
             </ul>
         </div>
         <div class="register-container">
