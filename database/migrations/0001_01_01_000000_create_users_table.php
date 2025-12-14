@@ -21,13 +21,12 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('student_number')->unique();
             $table->string('username')->unique();
             $table->string('email')->unique()->nullable(); 
             $table->string('password_hash')->nullable(); 
             $table->foreignId('user_type_id')->constrained('user_types')->onDelete('cascade');
             $table->timestamps();
-            $table->softDeletes(); // Optional: for deactivating users
+            $table->softDeletes(); 
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

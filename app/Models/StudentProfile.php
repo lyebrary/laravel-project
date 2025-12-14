@@ -14,6 +14,7 @@ class StudentProfile extends Model
         'first_name',
         'middle_name',
         'suffix',
+        'student_number',
         'year_standing',
         'college',
         'degree_program',

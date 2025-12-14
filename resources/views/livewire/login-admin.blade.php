@@ -35,7 +35,7 @@
                 </button>
 
             </form>
-            <p>Haven't registered? <span><a href="{{ route('register-student') }}">Register here.</a></span></p>
+            <p>Haven't registered? <span><a href="{{ route('register-admin') }}">Register here.</a></span></p>
         </div>
 
     </div>

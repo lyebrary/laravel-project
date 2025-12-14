@@ -14,7 +14,7 @@
         </div>
 
         <div class="register-container">
-            @if (request()->routeIs('register-student') or request()->routeIs('login-admin') )
+            @if (request()->routeIs('register-student') or request()->routeIs('login-admin') or request()->routeIs('register-admin') )
                 <a class="register" href="{{ route('welcome') }}" id="return">
                     Return
                 </a>

@@ -25,4 +25,12 @@ Route::get('/login-admin', function(){
     return view('login-admin');
     })->name('login-admin');
 
+Route::get('/register-admin', function(){
+    return view('register-admin');
+    })->name('register-admin');
+
+Route::get('/manage-logs', function(){
+    return view('manage-logs');
+    })->middleware(['auth', 'verified'])->name('manage-logs');
+
 require __DIR__.'/auth.php';

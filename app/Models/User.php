@@ -14,7 +14,6 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
-        'student_number',
         'username',
         'email',
         'password_hash',
@@ -26,6 +25,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->password_hash;
+    }
 
     public function userType()
     {

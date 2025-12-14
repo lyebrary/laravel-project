@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.logos img {
+    max-width: 320px;
+    object-fit: contain;
+}
+
+.header-reg {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 2rem;
+}
+
+.admin-registration-form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 620px;
+    padding: 3.5rem 3rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sur-first,
+.mid-suf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.label-field {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 0.4rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #9bc53d;
+}
+
+.admin-registration-form > div:not(.sur-first):not(.mid-suf):not(.data-priv-section) {
+    margin-bottom: 1.2rem;
+}
+
+.error {
+    display: block;
+    font-size: 0.85rem;
+    color: #d9534f;
+    margin-top: 0.3rem;
+}
+
+.data-priv-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.data-priv-checkbox {
+    margin-top: 0.25rem;
+    accent-color: #9bc53d;
+}
+
+.data-priv-text {
+    font-size: 0.9rem;
+    color: #3a3a3a;
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #9bc53d;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #88b53a;
+}
+
+.success-message {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #2e7d32;
+}
+
+@media (max-width: 640px) {
+    .sur-first,
+    .mid-suf {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-registration-form {
+        padding: 2.5rem 2rem;
+    }
+
+    .header-reg {
+        font-size: 2rem;
+    }
+}

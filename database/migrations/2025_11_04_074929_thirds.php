@@ -19,12 +19,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('studentprofiles', function (Blueprint $table) {
+        Schema::create('student_profiles', function (Blueprint $table) {
             $table->id();
             $table->string('surname');
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('suffix')->nullable();
+            $table->string('student_number')->unique();
             $table->string('year_standing');
             $table->string('college');
             $table->string('degree_program');
@@ -32,7 +33,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('adminprofiles', function (Blueprint $table) {
+        Schema::create('admin_profiles', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
             $table->string('surname');
@@ -42,7 +43,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('attendancelogs', function (Blueprint $table) {
+        Schema::create('attendance_logs', function (Blueprint $table) {
             $table->id();
             $table->dateTime('log_in');
             $table->dateTime('log_out')->nullable(); 
