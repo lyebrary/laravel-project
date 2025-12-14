@@ -45,7 +45,7 @@ return new class extends Migration
         Schema::create('attendancelogs', function (Blueprint $table) {
             $table->id();
             $table->dateTime('log_in');
-            $table->dateTime('log_out')->nullable(); // Nullable if not logged out yet
+            $table->dateTime('log_out')->nullable(); 
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('operation_id')->constrained('operations')->onDelete('cascade');
             $table->timestamps();

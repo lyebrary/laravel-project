@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-row img {
+    max-width: 350px;
+
+    object-fit: contain;
+}
+
+.title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    font-weight: 700;
+}   
+
+.title .blue-span {
+    color: #6dbdd6;
+}
+
+.title .orange-span {
+    color: #f4a259;
+}
+
+.title .green-span {
+    color: #9bc53d;
+}
+
+.title .dark-span {
+    color: #3a3a3a;
+    font-weight: 800;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.25rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #9bc53d;
+}
+
+/* Button */
+.login-btn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.7rem;
+    background: #9bc53d;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #88b53a;
+}
+
+p {
+    font-size: 0.95rem;
+    color:#3a3a3a;
+    margin-top: 1rem;
+}
+
+p span a {
+    color: var(--blue);
+    cursor: pointer;
+    font-style: italic
+}
+
+p span a:hover {
+    text-decoration: underline;
+    color: rgb(89, 89, 235);
+}

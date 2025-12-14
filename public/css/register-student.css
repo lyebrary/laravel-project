@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f6f5;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.logos img {
+    max-height: 90px;
+    object-fit: contain;
+    margin-top: 0;
+}
+
+.header-reg {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.student-registration-form {
+    background: #fff;
+    border: 2px solid #dcdcdc;
+    border-radius: 18px;
+    padding: 30px 35px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.sur-first,
+.mid-suf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.label-field {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #cfcfcf;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.auth-input:focus {
+    border-color: #9bc65c;
+}
+
+.student-registration-form > div {
+    margin-bottom: 15px;
+}
+
+.error {
+    display: block;
+    font-size: 14px; 
+    color: #d9534f;
+    margin-top: 4px;
+}
+
+.data-priv-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 18px 0 25px;
+}
+
+.data-priv-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #a8d08d; 
+    cursor: pointer;
+}
+
+.data-priv-text {
+    font-size: 15px; 
+    color: #555;
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: #9bc65c;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #86b44d;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .sur-first,
+    .mid-suf {
+        grid-template-columns: 1fr;
+    }
+
+    .student-registration-form {
+        padding: 25px 20px;
+    }
+
+    .header-reg {
+        font-size: 1.6rem;
+    }
+}
