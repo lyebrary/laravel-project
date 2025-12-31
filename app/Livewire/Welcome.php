@@ -5,12 +5,17 @@ namespace App\Livewire;
 use App\Models\StudentProfile;
 use App\Models\AttendanceLog;
 use App\Models\Operation;
+use App\Models\Event;  
+use App\Models\OperatingHour;  
 use Livewire\Component;
 
 class Welcome extends Component
 {
     public $student_number;
-    public $current_operation; 
+    public $current_operation;
+
+    public $events = [];
+    public $operatingHours;
 
     protected $rules = [
         'student_number' => 'required|string|max:255',
@@ -18,9 +23,9 @@ class Welcome extends Component
 
     public function mount()
     {
-        $this->current_operation = Operation::whereNotNull('start')
-            ->where('end', '>', now())
-            ->first();
+        $this->refreshCurrentOperation();  
+        $this->events = Event::all();
+        $this->operatingHours = OperatingHour::first();
     }
 
     protected function resetInput()
@@ -28,6 +33,11 @@ class Welcome extends Component
         $this->reset('student_number');
         $this->resetErrorBag();
         $this->resetValidation();
+    }
+
+    protected function refreshCurrentOperation()
+    {
+        $this->current_operation = Operation::getCurrent();  
     }
 
     public function login()
@@ -58,8 +68,10 @@ class Welcome extends Component
         AttendanceLog::create([
             'log_in' => now(),
             'user_id' => $user->id,
-            'operation_id' => optional($this->current_operation)->id,
+            'operation_id' => optional($this->current_operation)->id,  
         ]);
+
+        $this->refreshCurrentOperation();
 
         session()->flash('success', 'Logged in successfully!');
 
@@ -89,6 +101,8 @@ class Welcome extends Component
 
         $openLog->update(['log_out' => now()]);
 
+        $this->refreshCurrentOperation();
+
         session()->flash('success', 'Logged out successfully!');
 
         $this->resetInput();
@@ -96,7 +110,9 @@ class Welcome extends Component
 
     public function getCurrentLoggedInCount()
     {
-        if (!$this->current_operation) return 0;
+        if (!$this->current_operation) {
+            return 0;  
+        }
 
         return AttendanceLog::where('operation_id', $this->current_operation->id)
             ->whereNull('log_out')
@@ -107,6 +123,8 @@ class Welcome extends Component
     {
         return view('livewire.welcome', [
             'current_logged_in_count' => $this->getCurrentLoggedInCount(),
+            'events' => $this->events,  
+            'operatingHours' => $this->operatingHours,  
         ]);
     }
 }

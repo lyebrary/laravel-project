@@ -48,7 +48,7 @@ return new class extends Migration
             $table->dateTime('log_in');
             $table->dateTime('log_out')->nullable(); 
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('operation_id')->constrained('operations')->onDelete('cascade');
+            $table->foreignId('operation_id')->constrained('operations')->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }

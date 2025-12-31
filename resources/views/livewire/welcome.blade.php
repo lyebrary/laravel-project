@@ -37,14 +37,21 @@
 
         <div class="card card-time">
             <img src="{{ URL::asset('/images/clock-icon.png') }}" alt="clock-icon" id="clock-icon">
-            <p><span class="time">8</span>AM - <span class="time">8</span>PM</p>
+            <p>
+                <span class="time">{{ $operatingHours ? $operatingHours->start_time->format('g:i') : '9:00' }}</span>{{ $operatingHours ? $operatingHours->start_time->format('A') : 'AM' }} - 
+                <span class="time">{{ $operatingHours ? $operatingHours->end_time->format('g:i') : '5:00' }}</span>{{ $operatingHours ? $operatingHours->end_time->format('A') : 'PM' }}
+            </p>
         </div>
 
         <div class="card card-sched">
             <p>ORANGE ZONE</p>
-            <p><span class="time-sched">8:00AM-10:00AM</span> UP FLIPP</p>
-            <p><span class="time-sched">3:00PM-6:00PM</span> UP Kalilayan</p>
-            <p><span class="time-sched">6:00PM-8:00PM</span> Available</p>
+            @foreach ($events as $event)
+                <tr wire:click="editEvent({{ $event->id }})">
+                    <td>{{ $event->name }}</td>
+                    <td>{{ $event->start_time->format('g:i A') }}</td>  
+                    <td>{{ $event->end_time->format('g:i A') }}</td>    
+                </tr>
+            @endforeach
         </div>
     </div>
 </div>

@@ -1,0 +1,125 @@
+.manage-logs-container {
+    max-width: 1700px;
+    margin: 9rem auto;
+    padding: 0 2rem;
+    font-family: Poppins, Roboto, sans-serif;
+}
+
+.filters-card, .table-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(157, 199, 93, 0.2);
+}
+
+.filters-card h2 {
+    color: var(--dark-gray);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 1.4rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.filter-input {
+    padding: 0.8rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 8px rgba(157, 199, 93, 0.5);
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.logs-table th, .logs-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(157, 199, 93, 0.3);
+}
+
+.logs-table th {
+    background: var(--green);
+    color: white;
+    font-weight: 600;
+}
+
+.logs-table tr:hover {
+    background: rgba(157, 199, 93, 0.1);
+}
+
+.no-data {
+    text-align: center;
+    color: var(--dark-gray);
+    font-style: italic;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination .page-link {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: 1px solid var(--green);
+    background: white;
+    color: var(--green);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-link:hover, .pagination .page-item.active .page-link {
+    background: var(--green);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .manage-logs-container {
+        padding: 0 1rem;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logs-table {
+        font-size: 1.2rem;
+    }
+
+    .logs-table th, .logs-table td {
+        padding: 0.5rem;
+    }
+}

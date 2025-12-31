@@ -11,8 +11,8 @@ class OperationSeeder extends Seeder
     {
         Operation::create([
             'capacity' => 250,
-            'start' => now()->setTime(8, 0), // 8 AM 
-            'end' => now()->setTime(20, 0), // 8 PM 
+            'start' => now()->setTime(8, 0),  
+            'end' => now()->setTime(20, 0), 
         ]);
 
         Operation::create([

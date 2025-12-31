@@ -448,20 +448,20 @@ body {
 
 .card-time p {
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   display: inline-block;
   color: var(--blue)
 }
 
 
 .card-time p .time {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 
 .card-sched {
   border: 3px solid #f0b582;
-  color: var(--dark-gray);
+  color: var(--orange);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -504,6 +504,7 @@ body {
 
 .card-sched p {
     margin: 0;
+    font-weight: 700;
     color: var(--orange);
     transition: opacity 0.35s ease-in-out;
 }

@@ -10,9 +10,9 @@
             </div>
 
             <ul>
-                <li><a href="#">users</a></li>
+                <li><a href="{{route('manage-users')}}">users</a></li>
                 <li><a href="{{route('manage-logs')}}">logs</a></li>
-                <li><a href="#">venue</a></li>
+                <li><a href="{{route('manage-venue')}}">venue</a></li>
             </ul>
         </div>
         <div class="register-container">

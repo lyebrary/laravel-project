@@ -9,19 +9,17 @@ class Operation extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'capacity',
-        'start',
-        'end',
-    ];
-
-    protected $casts = [
-        'start' => 'datetime',
-        'end' => 'datetime',
-    ];
+    protected $fillable = ['capacity', 'start', 'end'];
 
     public function attendanceLogs()
     {
         return $this->hasMany(AttendanceLog::class);
+    }
+
+    public static function getCurrent()
+    {
+        return self::whereNotNull('start')
+            ->where('end', '>', now())
+            ->first();
     }
 }

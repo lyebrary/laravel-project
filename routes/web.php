@@ -37,4 +37,16 @@ Route::get('/manage-logs', function(){
     return view('manage-logs');
     })->middleware(['auth', 'verified'])->name('manage-logs');
 
+Route::get('/manage-users', function(){
+    return view('manage-users');
+    })->middleware(['auth', 'verified'])->name('manage-users');
+
+Route::get('/user-details/{user}', function ($user) {
+    return view('user-details', ['userId' => $user]);
+})->middleware(['auth', 'verified'])->name('user-details');
+
+Route::get('/manage-venue', function(){
+    return view('manage-venue');
+    })->middleware(['auth', 'verified'])->name('manage-venue');
+
 require __DIR__.'/auth.php';
