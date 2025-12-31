@@ -5,7 +5,7 @@
         <div class="alert-success">{{ session('message') }}</div>
     @endif
 
-    <!-- Orange Zone Events Section -->
+    
     <div class="events-section">
         <h2 class="section-header orange-zone-header">Orange Zone Events</h2>
         <div class="table-container">
@@ -34,7 +34,7 @@
         </div>
         <button wire:click="addEvent" class="add-event-button">+ Add Another Event</button>
 
-        <!-- Add/Edit Event Form -->
+        
         @if ($showAddEventForm || $editingEventId)
             <div class="event-form-container">
                 <h3 class="form-header">{{ $editingEventId ? 'Edit Event' : 'Add Event' }}</h3>
@@ -63,7 +63,7 @@
         @endif
     </div>
 
-    <!-- Operating Hours Section -->
+    
     <div class="operating-hours-section">
         <h2 class="section-header blue-section-header">Operating Hours</h2>
         <div class="operating-hours-container">

@@ -1,4 +1,4 @@
-/* User Details Container */
+
 .user-details-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -8,7 +8,7 @@
     padding: 1.5rem;
 }
 
-/* Title */
+
 .user-details-title {
     font-size: 1.875rem;
     font-weight: bold;
@@ -16,7 +16,7 @@
     color: var(--dark-gray);
 }
 
-/* Alerts */
+
 .alert {
     padding: 0.75rem;
     border-radius: 0.5rem;
@@ -35,7 +35,7 @@
     border: 1px solid #fca5a5;
 }
 
-/* Status Section */
+
 .status-section {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -67,10 +67,10 @@
 }
 
 .status-toggle-btn:hover {
-    background-color: #e55a1b; /* Darker orange */
+    background-color: #e55a1b; 
 }
 
-/* Fields Grid */
+
 .fields-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -117,7 +117,7 @@
     margin-top: 0.25rem;
 }
 
-/* Edit Form and Actions */
+
 .edit-form {
     margin-bottom: 1.5rem;
 }
@@ -140,7 +140,7 @@
 }
 
 .save-btn:hover {
-    background-color: #059669; /* Darker green */
+    background-color: #059669; 
 }
 
 .cancel-btn {
@@ -158,7 +158,7 @@
     background-color: #4b5563;
 }
 
-/* Page Actions */
+
 .page-actions {
     display: flex;
     gap: 1rem;
@@ -192,5 +192,5 @@
 }
 
 .back-btn:hover {
-    background-color: #1e40af; /* Darker blue */
+    background-color: #1e40af; 
 }

@@ -104,7 +104,7 @@
     color: white;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .manage-logs-container {
         padding: 0 1rem;

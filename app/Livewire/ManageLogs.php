@@ -49,7 +49,7 @@ class ManageLogs extends Component
 
     public function render()
     {
-        // Fetch all logs (remove date/time filters from query)
+        
         $logs = AttendanceLog::with(['user'])->get();
 
         $actions = collect();
@@ -85,16 +85,16 @@ class ManageLogs extends Component
             }
         }
 
-        // Now filter $actions by selectedDate, startTime, endTime
+        
         $manilaDate = Carbon::createFromFormat('Y-m-d', $this->selectedDate, 'Asia/Manila');
         $actions = $actions->filter(function ($action) use ($manilaDate) {
-            // Filter by date (must match selectedDate)
+            
             $actionDate = $action['timestamp']->toDateString();
             if ($actionDate !== $this->selectedDate) {
                 return false;
             }
 
-            // Filter by startTime (if set)
+            
             if ($this->startTime) {
                 $startTime = $manilaDate->copy()->setTimeFromTimeString($this->startTime);
                 if ($action['timestamp']->lt($startTime)) {
@@ -102,7 +102,7 @@ class ManageLogs extends Component
                 }
             }
 
-            // Filter by endTime (if set)
+            
             if ($this->endTime) {
                 $endTime = $manilaDate->copy()->setTimeFromTimeString($this->endTime);
                 if ($action['timestamp']->gt($endTime)) {
@@ -113,10 +113,10 @@ class ManageLogs extends Component
             return true;
         });
 
-        // Sort by timestamp descending
+         
         $actions = $actions->sortByDesc('timestamp');
 
-        // Paginate the filtered/sorted actions
+        
         $paginatedActions = new \Illuminate\Pagination\LengthAwarePaginator(
             $actions->forPage($this->page, 15), 
             $actions->count(),                  

@@ -17,7 +17,7 @@ class ManageUsers extends Component
     public $selectAll = false;
     public $showPasswordModal = false;
     public $adminPassword = '';
-    public $deleteAction = ''; // 'selected' or 'all'
+    public $deleteAction = ''; 
     public $totalUsers = 0;
 
     protected $rules = [
@@ -49,7 +49,7 @@ class ManageUsers extends Component
         $this->users = $query->get()
             ->map(function ($profile) use ($operationId) {
                 $user = $profile->user;
-                // No need for null checks now, as the query guarantees $user exists
+                
                 $isLoggedIn = $operationId && AttendanceLog::where('user_id', $user->id)
                     ->where('operation_id', $operationId)
                     ->whereNull('log_out')

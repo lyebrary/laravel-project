@@ -66,7 +66,7 @@ class UserDetails extends Component
         $currentOperation = Operation::getCurrent();
         if ($currentOperation) {
             if ($this->status === 'Logged in') {
-                // Log out
+                
                 AttendanceLog::where('user_id', $this->user->id)
                     ->where('operation_id', $currentOperation->id)
                     ->whereNull('log_out')

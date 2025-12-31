@@ -28,7 +28,7 @@
                 </div>
                 <div>
                     <label for="suffix" class="label-field">Suffix (Jr, II, etc.)</label>
-                    <input wire:model="suffix" id="suffix" class="auth-input"> <!-- Fixed wire.model -->
+                    <input wire:model="suffix" id="suffix" class="auth-input"> 
                     @error('suffix') <span class="error">{{ $message }}</span> @enderror
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <input wire:model="username" id="username" class="auth-input">
                 @error('username') <span class="error">{{ $message }}</span> @enderror
             </div>
-            <!-- Added missing fields -->
+            
             <div>
                 <label for="student_number" class="label-field">Student Number</label>
                 <input wire:model="student_number" id="student_number" class="auth-input" placeholder="e.g., 2021001">
@@ -80,7 +80,7 @@
             <button type="submit" class="submit-btn">Register</button>
         </form>
 
-        <!-- Success message -->
+        
         @if (session()->has('success'))
             <div class="success-message">{{ session('success') }}</div>
         @endif

@@ -288,12 +288,12 @@
 }
 
 .counter-icon {
-    color: var(--green); /* Match the theme */
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    color: var(--green); 
+    flex-shrink: 0; 
 }
 
 .counter-icon svg {
-    width: 2.5rem; /* Icon size */
+    width: 2.5rem; 
     height: 2.5rem;
 }
 
@@ -302,7 +302,7 @@
 }
 
 .counter-number {
-    font-size: 2rem; /* Large number for emphasis */
+    font-size: 2rem; 
     font-weight: bold;
     color: var(--dark-gray);
     margin-bottom: 0.25rem;
